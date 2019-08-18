@@ -1,7 +1,12 @@
 const { Router } = require("express");
+const fs = require("fs");
 const save = require("./lib");
+const filePath = "../data/dailyJournals.json";
 
-let journals = require("../data/dailyJournals.json");
+if(!fs.existsSync(filePath)){
+  save({});
+}
+let journals = require(filePath);
 
 const router = new Router();
 
