@@ -4,7 +4,7 @@
   "description": "API to keep daily journals",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --coverage",
     "start": "node ./src/index.js",
     "start:watch": "nodemon ./src/index.js"
   },
@@ -23,6 +23,8 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
-    "nodemon": "^1.19.1"
+    "jest": "^24.9.0",
+    "nodemon": "^1.19.1",
+    "supertest": "^4.0.2"
   }
 }
