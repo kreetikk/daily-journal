@@ -1,2 +1,1 @@
-# DailyJournal
-API to keep daily journals
+# Daily Journal API

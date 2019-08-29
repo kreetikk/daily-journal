@@ -4,9 +4,10 @@
   "description": "API to keep daily journals",
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage",
     "start": "node ./src/index.js",
-    "start:watch": "nodemon ./src/index.js"
+    "start:watch": "nodemon",
+    "test": "jest --watchAll --coverage",
+    "prettify": "prettier --write \"**/*.{jsx,js}\""
   },
   "repository": {
     "type": "git",
@@ -18,13 +19,24 @@
     "url": "https://github.com/kreetikk/daily-journal/issues"
   },
   "homepage": "https://github.com/kreetikk/daily-journal#readme",
+  "nodemonConfig": {
+    "watch": [
+      "src",
+      ".env"
+    ],
+    "exec": "node ./src/index.js"
+  },
+  "keywords": [],
   "dependencies": {
     "body-parser": "^1.19.0",
-    "express": "^4.17.1"
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.1.1"
   },
   "devDependencies": {
     "jest": "^24.9.0",
     "nodemon": "^1.19.1",
+    "prettier": "^1.18.2",
     "supertest": "^4.0.2"
   }
 }

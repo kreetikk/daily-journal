@@ -1,5 +1,4 @@
-const app = require("./app");
+const app = require('./app')
+const { PORT } = require('./config')
 
-app.listen(3000, () => {
-  console.log("Journals at http://localhost:3000");
-});
+app.listen(PORT, () => console.log(`listening at port ${PORT}.`))
