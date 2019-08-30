@@ -1,5 +1,6 @@
 const express = require('express')
 const bodyParser = require('body-parser')
+const cors = require('cors')
 
 const DatabaseService = require('./services/Database')
 const publicRouter = require('./routers/public')
@@ -11,6 +12,8 @@ const app = express()
 const urlPrefix = '/api/v1/'
 
 app.use(bodyParser.json())
+
+app.use(cors())
 
 app.use((req, res, next) => {
   req.db = db
